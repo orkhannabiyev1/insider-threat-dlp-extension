@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <title>DLP Monitor - SOC Ayarları</title>
+  <style>
+    body { font-family: sans-serif; width: 320px; padding: 12px; }
+    label { display: block; margin-top: 10px; font-size: 13px; font-weight: bold; }
+    input { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 14px; padding: 8px 12px; width: 100%; }
+    .note { font-size: 11px; color: #666; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h3>SOC Alert Ayarları</h3>
+
+  <label>Telegram Bot Token</label>
+  <input type="text" id="telegramBotToken" placeholder="123456:ABC-DEF..." />
+
+  <label>Telegram Chat ID</label>
+  <input type="text" id="telegramChatId" placeholder="-1001234567890" />
+
+  <label>Webhook URL (alternativ/əlavə)</label>
+  <input type="text" id="webhookUrl" placeholder="https://soc.sirket.com/api/alert" />
+
+  <button id="save">Yadda saxla</button>
+  <p id="status"></p>
+
+  <p class="note">
+    Bu ayarlar yalnız SOC administratoru tərəfindən təyin olunmalıdır.
+    Real deployment üçün bu extension-ı Chrome Enterprise Policy (managed storage)
+    vasitəsilə force-install etmək və token-ləri policy JSON-da təyin etmək tövsiyə olunur —
+    beləliklə istifadəçinin özü bu səhifəyə çıxıb ayarları görə/dəyişə bilməz.
+  </p>
+
+  <script src="options.js"></script>
+</body>
+</html>
